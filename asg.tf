@@ -12,7 +12,7 @@ resource "aws_appautoscaling_target" "ecs_asg" {
 # create scaling policy for the auto scaling group
 resource "aws_appautoscaling_policy" "ecs_policy" {
   name = "${var.project_name}-${var.environment}-policy"
-  policy_type = "TargetTrackinScaling"
+  policy_type = "TargetTrackingScaling"
   resource_id = "service/${var.project_name}-${var.environment}-cluster/${var.project_name}-${var.environment}-service"
   scalable_dimension = "ecs:service:DesiredCount"
   service_namespace = "ecs"
@@ -25,8 +25,7 @@ resource "aws_appautoscaling_policy" "ecs_policy" {
 
     target_value = 70
     scale_out_cooldown = 300
-    scale_in_cooldown = 300
-    disable_scale_in = false 
+     disable_scale_in = false 
   }
 
   depends_on = [aws_appautoscaling_target.ecs_asg]
