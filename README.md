@@ -1,4 +1,4 @@
-[Alt text](Dynamic-web-app-aws-terraform-ecs-ecr.jpeg)
+![Alt text](Dynamic-web-app-aws-terraform-ecs-ecr.jpeg)
 
 # Dynamic Web Application on AWS using Terraform, ECS, and ECR
 
